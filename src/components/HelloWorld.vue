@@ -1,33 +1,56 @@
 <template>
   <div>
-    <v-app-bar
-      absolute
-      color="black"
-      elevate-on-scroll
-      scroll-target="#scrolling-techniques-7"
-      dense
-      dark
-      flat
-    >
-      <v-toolbar-title>Page title</v-toolbar-title>
-      <v-divider class="mx-2" vertical ></v-divider>
-      
-      <v-divider vertical></v-divider>
-      <v-spacer></v-spacer>
+    <div>
+      <v-app-bar
+        absolute
+        color="black"
+        elevate-on-scroll
+        scroll-target="#scrolling-techniques-7"
+        dense
+        dark
+        flat
+      >
+        <v-divider class="sm-2" vertical></v-divider>
+        
+        
+        <v-toolbar-title class="hidden-sm-and-down" >Page Title</v-toolbar-title>
+        <v-app-bar-nav-icon class="hidden-md-and-up"></v-app-bar-nav-icon>
+        
+        <v-spacer></v-spacer>
 
-      <v-card class="hidden-sm-and-down" center-active >
-        <v-tabs center-active dark>
-          <v-tab>One</v-tab>
-          <v-tab>Two</v-tab>
-          <v-tab>Three</v-tab>
-        </v-tabs>
-      </v-card>
+        <v-card class="hidden-sm-and-down" centered color="black">
+          <v-tabs dark background-color="black">
+            <v-tab>Guie</v-tab>
+            <v-tab>Documents</v-tab>
+            <v-tab>Components</v-tab>
+            <v-tab>Licenses</v-tab>
+          </v-tabs>
+        </v-card>
 
-      <v-divider vertical></v-divider>
-      <v-spacer></v-spacer>
-      <Dialog />
-      <v-divider vertical></v-divider>
-    </v-app-bar>
+        <v-spacer></v-spacer>
+        <Dialog />
+        <v-divider vertical></v-divider>
+      </v-app-bar>
+    </div>
+
+    <div class="center">
+      <v-simple-table>
+        <template v-slot:default>
+          <thead>
+            <tr>
+              <th class="text-left">Name</th>
+              <th class="text-left">Calories</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in desserts" :key="item.name">
+              <td>{{ item.name }}</td>
+              <td>{{ item.calories }}</td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
+    </div>
   </div>
 </template>
 
@@ -40,55 +63,27 @@ export default {
     Dialog,
   },
   data: () => ({
-    ecosystem: [
+    hola: true,
+    desserts: [
       {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader",
+        name: "probando",
+        calories: "nose",
       },
       {
-        text: "github",
-        href: "https://github.com/vuetifyjs/vuetify",
+        name: "probando",
+        calories: "nose",
       },
       {
-        text: "awesome-vuetify",
-        href: "https://github.com/vuetifyjs/awesome-vuetify",
-      },
-    ],
-    importantLinks: [
-      {
-        text: "Documentation",
-        href: "https://vuetifyjs.com",
+        name: "probando",
+        calories: "nose",
       },
       {
-        text: "Chat",
-        href: "https://community.vuetifyjs.com",
+        name: "probando",
+        calories: "nose",
       },
       {
-        text: "Made with Vuetify",
-        href: "https://madewithvuejs.com/vuetify",
-      },
-      {
-        text: "Twitter",
-        href: "https://twitter.com/vuetifyjs",
-      },
-      {
-        text: "Articles",
-        href: "https://medium.com/vuetify",
-      },
-    ],
-    whatsNext: [
-      {
-        text: "Explore components",
-        href: "https://vuetifyjs.com/components/api-explorer",
-      },
-      {
-        text: "Select a layout",
-        href: "https://vuetifyjs.com/getting-started/pre-made-layouts",
-      },
-      {
-        text: "Frequently Asked Questions",
-        href:
-          "https://vuetifyjs.com/getting-started/frequently-asked-questions",
+        name: "probando",
+        calories: "nose",
       },
     ],
   }),
@@ -96,7 +91,8 @@ export default {
 </script>
 
 <style  scoped>
-.hola {
-  background-color: black;
+.center {
+  margin: 100px auto;
+  width: 80%;
 }
 </style>
