@@ -11,11 +11,13 @@
         flat
       >
         <v-divider class="sm-2" vertical></v-divider>
-        
-        
-        <v-toolbar-title class="hidden-sm-and-down" >Page Title</v-toolbar-title>
-        <v-app-bar-nav-icon class="hidden-md-and-up"></v-app-bar-nav-icon>
-        
+
+        <v-toolbar-title class="hidden-sm-and-down">Page Title</v-toolbar-title>
+        <v-app-bar-nav-icon
+          class="hidden-md-and-up"
+          @click.stop="drawer = !drawer"
+        ></v-app-bar-nav-icon>
+
         <v-spacer></v-spacer>
 
         <v-card class="hidden-sm-and-down" centered color="black">
@@ -58,32 +60,38 @@
 import Dialog from "./Dialog";
 
 export default {
-  name: "HelloWorld",
+  name: "NavBar",
   components: {
     Dialog,
   },
+  watch: {
+    group() {
+      this.drawer = false;
+    },
+  },
   data: () => ({
-    hola: true,
+    drawer: false,
+    group: null,
     desserts: [
       {
-        name: "probando",
-        calories: "nose",
+        name: "element",
+        calories: "value",
       },
       {
-        name: "probando",
-        calories: "nose",
+        name: "element 1",
+        calories: "value",
       },
       {
-        name: "probando",
-        calories: "nose",
+        name: "element 2",
+        calories: "value",
       },
       {
-        name: "probando",
-        calories: "nose",
+        name: "element 3",
+        calories: "value",
       },
       {
-        name: "probando",
-        calories: "nose",
+        name: "element 4",
+        calories: "value",
       },
     ],
   }),
