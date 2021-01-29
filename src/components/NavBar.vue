@@ -67,25 +67,7 @@
       </v-app-bar>
     </div>
 
-    <!--Container Table-->
-    <div class="center">
-      <v-simple-table>
-        <template v-slot:default>
-          <thead>
-            <tr>
-              <th class="text-left">Name</th>
-              <th class="text-left">Calories</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="item in desserts" :key="item.name">
-              <td>{{ item.name }}</td>
-              <td>{{ item.calories }}</td>
-            </tr>
-          </tbody>
-        </template>
-      </v-simple-table>
-    </div>
+    
   </div>
 </template>
 
@@ -105,28 +87,7 @@ export default {
   data: () => ({
     drawer: false,
     group: null,
-    desserts: [
-      {
-        name: "element",
-        calories: "value",
-      },
-      {
-        name: "element 1",
-        calories: "value",
-      },
-      {
-        name: "element 2",
-        calories: "value",
-      },
-      {
-        name: "element 3",
-        calories: "value",
-      },
-      {
-        name: "element 4",
-        calories: "value",
-      },
-    ],
+   
   }),
 };
 </script>
